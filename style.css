@@ -1,0 +1,764 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --green: #007a3d;
+    --dark-green: #00552c;
+    --light-green: #00a651;
+    --white: #ffffff;
+    --black: #111111;
+    --yellow: #ffd500;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--green);
+}
+
+
+/* ========================= */
+/* FONDO */
+/* ========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.12) 0 3px,
+            transparent 4px
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,.10) 0 4px,
+            transparent 5px
+        ),
+        linear-gradient(
+            135deg,
+            #003d20,
+            #007a3d,
+            #00a651
+        );
+
+    background-size:
+        80px 80px,
+        120px 120px,
+        cover;
+}
+
+
+/* ========================= */
+/* PANTALLAS */
+/* ========================= */
+
+.screen {
+
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    position: relative;
+}
+
+.screen.active {
+    display: flex;
+
+    animation: screenIn .6s ease;
+}
+
+@keyframes screenIn {
+
+    from {
+        opacity: 0;
+        transform: scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ========================= */
+/* TARJETAS */
+/* ========================= */
+
+.card {
+
+    width: min(92vw, 520px);
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+
+    border: 6px solid var(--yellow);
+
+    position: relative;
+}
+
+
+/* ========================= */
+/* TEXTOS */
+/* ========================= */
+
+h1,
+h2 {
+
+    font-family: 'Bangers', cursive;
+
+    letter-spacing: 2px;
+
+    color: var(--green);
+}
+
+h1 {
+    font-size: clamp(50px, 14vw, 85px);
+    line-height: .9;
+}
+
+h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+
+    margin-top: 25px;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #333;
+}
+
+p {
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* ========================= */
+/* BOTONES */
+/* ========================= */
+
+button {
+
+    margin-top: 25px;
+
+    border: none;
+
+    background: var(--green);
+
+    color: white;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-weight: 800;
+
+    font-size: 16px;
+
+    padding: 16px 25px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 0 var(--dark-green);
+
+    transition: .15s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button:active {
+
+    transform: translateY(5px);
+
+    box-shadow:
+        0 2px 0 var(--dark-green);
+}
+
+
+/* ========================= */
+/* NIVEL */
+/* ========================= */
+
+.level {
+
+    display: inline-block;
+
+    background: var(--yellow);
+
+    color: #111;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ========================= */
+/* BALÓN */
+/* ========================= */
+
+.basket {
+
+    font-size: 90px;
+
+    margin: 20px;
+
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+
+    from {
+        transform: translateY(0) rotate(-10deg);
+    }
+
+    to {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+#ballButton {
+
+    width: 90px;
+    height: 90px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: #f57c00;
+
+    font-size: 45px;
+
+    box-shadow:
+        0 8px 0 #a84d00;
+}
+
+.score {
+
+    margin-top: 20px;
+
+    font-weight: 800;
+
+    color: var(--green);
+
+    font-size: 20px;
+}
+
+
+/* ========================= */
+/* EMOJIS */
+/* ========================= */
+
+.emoji-big {
+
+    font-size: 75px;
+
+    animation: bounce 1.2s infinite alternate;
+}
+
+.mystery {
+
+    font-size: 55px;
+
+    margin-top: 20px;
+}
+
+.secret-box {
+
+    font-size: 100px;
+
+    margin: 25px;
+
+    animation: shake 1s infinite;
+}
+
+@keyframes shake {
+
+    0%,100% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+
+/* ========================= */
+/* PISTAS */
+/* ========================= */
+
+.clues {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin: 25px 0;
+}
+
+.clue {
+
+    background: #f2f2f2;
+
+    border-radius: 18px;
+
+    padding: 18px 10px;
+
+    font-size: 35px;
+}
+
+.clue span {
+
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    margin-top: 5px;
+}
+
+.question {
+
+    font-weight: 800;
+
+    font-size: 18px;
+}
+
+
+/* ========================= */
+/* REGALO */
+/* ========================= */
+
+.gift {
+
+    margin: 30px auto;
+
+    width: 180px;
+    height: 160px;
+
+    position: relative;
+
+    animation: giftFloat 1.5s infinite alternate;
+}
+
+@keyframes giftFloat {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-12px);
+    }
+}
+
+.gift-box {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 180px;
+    height: 120px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 40%,
+            var(--yellow) 40%,
+            var(--yellow) 60%,
+            transparent 60%
+        ),
+        #00a651;
+
+    border-radius: 10px;
+
+    font-size: 55px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.gift-lid {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: -10px;
+
+    width: 200px;
+    height: 35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 42%,
+            var(--yellow) 42%,
+            var(--yellow) 58%,
+            transparent 58%
+        ),
+        #008f46;
+
+    border-radius: 8px;
+
+    z-index: 2;
+}
+
+
+/* ========================= */
+/* VALE FINAL */
+/* ========================= */
+
+.voucher {
+
+    width: min(94vw, 600px);
+
+    background: white;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45);
+
+    border: 5px solid var(--yellow);
+
+    animation: voucherAppear .9s ease;
+}
+
+@keyframes voucherAppear {
+
+    from {
+        transform: scale(.5) rotate(-5deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+.voucher-top {
+
+    background: var(--green);
+
+    color: white;
+
+    font-weight: 800;
+
+    font-size: 18px;
+
+    padding: 20px;
+}
+
+.voucher-content {
+
+    padding: 30px 22px;
+
+    text-align: center;
+}
+
+.trophy {
+
+    font-size: 70px;
+}
+
+.voucher h1 {
+
+    font-size: 65px;
+
+    color: var(--green);
+
+    margin: 10px 0;
+}
+
+.voucher h2 {
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color: #111;
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================= */
+/* PARTIDO */
+/* ========================= */
+
+.match {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    background: #f1f1f1;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+}
+
+.match strong {
+
+    font-size: 14px;
+
+    color: var(--green);
+}
+
+.match span {
+
+    font-weight: 800;
+
+    font-size: 13px;
+}
+
+
+/* ========================= */
+/* DEDICATORIA */
+/* ========================= */
+
+.voucher-text {
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+}
+
+.dedication {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #e8f7ef,
+            #ffffff
+        );
+
+    border: 3px dashed var(--green);
+
+    border-radius: 20px;
+
+    padding: 22px;
+}
+
+.dedication h3 {
+
+    font-size: 22px;
+
+    color: var(--green);
+
+    margin-bottom: 10px;
+}
+
+.dedication p {
+
+    font-size: 14px;
+
+    margin: 8px 0;
+}
+
+.signatures {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-top: 20px;
+
+    font-weight: 800;
+
+    color: var(--green);
+}
+
+.final-message {
+
+    margin-top: 25px;
+
+    background: var(--green);
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    font-weight: 800;
+}
+
+
+/* ========================= */
+/* CONFETI */
+/* ========================= */
+
+.confetti {
+
+    position: fixed;
+
+    top: 20px;
+
+    left: 0;
+
+    right: 0;
+
+    text-align: center;
+
+    font-size: 45px;
+
+    z-index: 5;
+
+    animation: confetti 1s infinite alternate;
+}
+
+@keyframes confetti {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(15px);
+    }
+}
+
+
+/* ========================= */
+/* BALONES FLOTANDO */
+/* ========================= */
+
+.floating-ball {
+
+    position: fixed;
+
+    font-size: 50px;
+
+    opacity: .25;
+
+    z-index: -1;
+
+    animation: float 4s infinite ease-in-out;
+}
+
+.ball1 {
+
+    top: 10%;
+
+    left: 5%;
+}
+
+.ball2 {
+
+    bottom: 10%;
+
+    right: 5%;
+
+    animation-delay: 2s;
+}
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-40px) rotate(180deg);
+    }
+}
+
+
+/* ========================= */
+/* MÓVIL */
+/* ========================= */
+
+@media (max-width: 500px) {
+
+    .screen {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 30px 18px;
+        border-width: 4px;
+    }
+
+    h2 {
+        font-size: 42px;
+    }
+
+    .voucher h1 {
+        font-size: 55px;
+    }
+
+    .match {
+        gap: 7px;
+        font-size: 20px;
+    }
+
+    .signatures {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
