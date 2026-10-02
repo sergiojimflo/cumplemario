@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>🎂 ¡Feliz cumpleaños!</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- FONDO -->
+    <div class="background"></div>
+
+    <!-- ========================= -->
+    <!-- PANTALLA 1 -->
+    <!-- ========================= -->
+
+    <section id="screen1" class="screen active">
+
+        <div class="floating-ball ball1">🏀</div>
+        <div class="floating-ball ball2">🏀</div>
+
+        <div class="card intro-card">
+
+            <div class="emoji-big">🎂</div>
+
+            <h1>
+                ¡FELIZ<br>
+                CUMPLEAÑOS!
+            </h1>
+
+            <p class="subtitle">
+                Tenemos una misión secreta para ti...
+            </p>
+
+            <div class="mystery">
+                🤫
+            </div>
+
+            <button onclick="goToScreen(2)">
+                🚀 EMPEZAR MISIÓN
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- PANTALLA 2 -->
+    <!-- ========================= -->
+
+    <section id="screen2" class="screen">
+
+        <div class="card">
+
+            <div class="level">
+                NIVEL 1
+            </div>
+
+            <h2>
+                🏀 PRIMER RETO
+            </h2>
+
+            <p>
+                Para continuar tienes que demostrar que
+                tienes reflejos de campeón.
+            </p>
+
+            <div class="basket">
+                🏀
+            </div>
+
+            <p class="small">
+                ¡Pulsa el balón!
+            </p>
+
+            <button id="ballButton" onclick="hitBall()">
+                🏀
+            </button>
+
+            <div id="score" class="score">
+                0 / 3
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- PANTALLA 3 -->
+    <!-- ========================= -->
+
+    <section id="screen3" class="screen">
+
+        <div class="card">
+
+            <div class="level">
+                NIVEL 2
+            </div>
+
+            <h2>
+                🔥 ¡MUY BIEN!
+            </h2>
+
+            <p>
+                Has superado la primera prueba.
+            </p>
+
+            <p>
+                Pero todavía no podemos decirte
+                cuál es tu regalo...
+            </p>
+
+            <div class="secret-box">
+                ❓
+            </div>
+
+            <button onclick="goToScreen(4)">
+                🔐 DESCUBRIR PISTA
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- PANTALLA 4 -->
+    <!-- ========================= -->
+
+    <section id="screen4" class="screen">
+
+        <div class="card">
+
+            <div class="level">
+                PISTA SECRETA
+            </div>
+
+            <h2>
+                👀 ¿DÓNDE VAMOS?
+            </h2>
+
+            <p>
+                Vas a necesitar:
+            </p>
+
+            <div class="clues">
+
+                <div class="clue">
+                    🏀
+                    <span>Balón</span>
+                </div>
+
+                <div class="clue">
+                    🏟️
+                    <span>Pabellón</span>
+                </div>
+
+                <div class="clue">
+                    💚
+                    <span>Verde</span>
+                </div>
+
+                <div class="clue">
+                    🔥
+                    <span>Muchísima emoción</span>
+                </div>
+
+            </div>
+
+            <p class="question">
+                ¿Ya sabes de qué se trata?
+            </p>
+
+            <button onclick="goToScreen(5)">
+                🤔 CREO QUE SÍ...
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- PANTALLA 5 -->
+    <!-- ========================= -->
+
+    <section id="screen5" class="screen">
+
+        <div class="card">
+
+            <div class="level">
+                ÚLTIMO NIVEL
+            </div>
+
+            <h2>
+                🎁 ¡HAS LLEGADO AL FINAL!
+            </h2>
+
+            <p>
+                Hay un regalo esperándote.
+            </p>
+
+            <p>
+                Pero tendrás que abrirlo...
+            </p>
+
+            <div id="gift" class="gift">
+
+                <div class="gift-lid"></div>
+
+                <div class="gift-box">
+                    🎁
+                </div>
+
+            </div>
+
+            <button onclick="openGift()">
+                🎁 ABRIR REGALO
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- PANTALLA 6 -->
+    <!-- ========================= -->
+
+    <section id="screen6" class="screen">
+
+        <div class="confetti">🎉</div>
+
+        <div class="voucher">
+
+            <div class="voucher-top">
+                🏀 UNICAJA BALONCESTO
+            </div>
+
+            <div class="voucher-content">
+
+                <div class="trophy">
+                    🏆
+                </div>
+
+                <h1>
+                    ¡SORPRESA!
+                </h1>
+
+                <h2>
+                    🎟️ VALE POR UNA ENTRADA
+                </h2>
+
+                <div class="match">
+
+                    <div>
+                        🏀
+                    </div>
+
+                    <strong>
+                        UNICAJA
+                    </strong>
+
+                    <span>
+                        VS
+                    </span>
+
+                    <strong>
+                        ¿RIVAL?
+                    </strong>
+
+                    <div>
+                        🏀
+                    </div>
+
+                </div>
+
+                <p class="voucher-text">
+                    Este vale te da derecho a disfrutar
+                    de un partidazo de baloncesto
+                    del Unicaja. 💚
+                </p>
+
+                <div class="dedication">
+
+                    <h3>
+                        💚 PARA TI
+                    </h3>
+
+                    <p>
+                        ¡FELIZ CUMPLEAÑOS!
+                    </p>
+
+                    <p>
+                        Esperamos que disfrutes muchísimo
+                        de esta experiencia, que animes,
+                        grites y te lo pases genial.
+                    </p>
+
+                    <p>
+                        Te lo hemos preparado con
+                        muchísimo cariño.
+                    </p>
+
+                    <div class="signatures">
+
+                        <span>
+                            ❤️ Sergio
+                        </span>
+
+                        <span>
+                            ❤️ Celia
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="final-message">
+                    🏀 ¡NOS VAMOS AL BALONCESTO! 🏀
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
