@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 ¡Feliz cumpleaños!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <!-- ========================= -->
+    <!-- PANTALLA INICIAL -->
+    <!-- ========================= -->
+    <section id="screen1" class="screen active">
+        <div class="floating-ball ball1">🏀</div>
+        <div class="floating-ball ball2">⚽</div>
+        <div class="card intro-card">
+            <div class="emoji-big">🎂</div>
+            <h1>
+                ¡FELIZ<br>
+                CUMPLEAÑOS!
+            </h1>
+            <p class="subtitle">
+                Tenemos una misión secreta para ti...
+            </p>
+            <div class="mystery">
+                🕵️‍♂️
+            </div>
+            <button onclick="goToScreen(2)">
+                🚀 EMPEZAR MISIÓN
+            </button>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- PRUEBA BALONCESTO -->
+    <!-- ========================= -->
+    <section id="screen2" class="screen">
+        <div class="card sports-card">
+            <div class="level">
+                🏀 PRUEBA 1 DE 2
+            </div>
+            <h2>
+                ¡A POR LA CANASTA!
+            </h2>
+            <p class="instruction">
+                Tienes que conseguir
+                <strong>3 canastas</strong>.
+            </p>
+            <div class="basket-game">
+                <div class="score-board">
+                    CANASTAS
+                    <strong id="basketScore">0 / 3</strong>
+                </div>
+                <div class="hoop">
+                    🏀
+                    <div class="net"></div>
+                </div>
+                <div
+                    id="basketBall"
+                    class="game-ball basketball"
+                    onclick="shootBasketball()"
+                >
+                    🏀
+                </div>
+            </div>
+            <p id="basketMessage" class="game-message">
+                👆 ¡Toca el balón para lanzar!
+            </p>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- PRUEBA FÚTBOL -->
+    <!-- ========================= -->
+    <section id="screen3" class="screen">
+        <div class="card sports-card">
+            <div class="level">
+                ⚽ PRUEBA 2 DE 2
+            </div>
+            <h2>
+                ¡A POR EL GOL!
+            </h2>
+            <p class="instruction">
+                Ahora tienes que marcar
+                <strong>3 goles</strong>.
+            </p>
+            <div class="football-game">
+                <div class="score-board football-score">
+                    GOLES
+                    <strong id="footballScore">0 / 3</strong>
+                </div>
+                <div class="goal">
+                    <div class="goal-net"></div>
+                    <span>
+                        🥅
+                    </span>
+                </div>
+                <div
+                    id="footballBall"
+                    class="game-ball football"
+                    onclick="shootFootball()"
+                >
+                    ⚽
+                </div>
+            </div>
+            <p id="footballMessage" class="game-message">
+                👆 ¡Toca el balón para chutar!
+            </p>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- REGALO DISPONIBLE -->
+    <!-- ========================= -->
+    <section id="screen4" class="screen">
+        <div class="card">
+            <div class="success">
+                🏆
+            </div>
+            <h2>
+                ¡MISIÓN SUPERADA!
+            </h2>
+            <p class="big-text">
+                Has conseguido:
+            </p>
+            <div class="achievements">
+                <div>
+                    🏀
+                    <strong>3 CANASTAS</strong>
+                </div>
+                <div>
+                    ⚽
+                    <strong>3 GOLES</strong>
+                </div>
+            </div>
+            <p class="big-text">
+                Ahora sí...
+            </p>
+            <p class="mystery-text">
+                ¡Ha llegado el momento de descubrir tu regalo! 🎁
+            </p>
+            <button onclick="goToScreen(5)">
+                🎁 VER EL REGALO
+            </button>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- REGALO -->
+    <!-- ========================= -->
+    <section id="screen5" class="screen">
+        <div class="card gift-card">
+            <div class="level">
+                🎁 ÚLTIMO PASO
+            </div>
+            <h2>
+                ¡ABRE EL REGALO!
+            </h2>
+            <p class="big-text">
+                Todo esto era para llegar hasta aquí...
+            </p>
+            <div id="gift" class="gift">
+                <div class="gift-lid"></div>
+                <div class="gift-box">
+                    🎁
+                </div>
+            </div>
+            <button onclick="openGift()">
+                🔓 ABRIR REGALO
+            </button>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- VALE FINAL -->
+    <!-- ========================= -->
+    <section id="screen6" class="screen final-screen">
+        <div class="confetti-container" id="confetti"></div>
+        <div class="voucher">
+            <div class="voucher-top">
+                🏀 UNICAJA BALONCESTO 🏀
+            </div>
+            <div class="voucher-content">
+                <div class="trophy">
+                    🏆
+                </div>
+                <div class="surprise">
+                    ¡SORPRESA!
+                </div>
+                <h1 class="voucher-title">
+                    🎟️ VALE REGALO
+                </h1>
+                <div class="main-gift">
+                    UNA ENTRADA
+                    <br>
+                    PARA UN PARTIDO
+                    <br>
+                    DE UNICAJA
+                </div>
+                <div class="basketball-decoration">
+                    🏀 💚 🏀
+                </div>
+                <div class="dedication">
+                    <h3>
+                        💚 PARA TI 💚
+                    </h3>
+                    <p class="birthday">
+                        ¡FELIZ CUMPLEAÑOS!
+                    </p>
+                    <p>
+                        Este vale es para que disfrutes
+                        de un partidazo de baloncesto
+                        del <strong>Unicaja</strong>.
+                    </p>
+                    <p>
+                        Queremos que lo pases genial,
+                        que animes, grites y disfrutes
+                        muchísimo de la experiencia.
+                    </p>
+                    <p>
+                        Te lo hemos preparado con
+                        <strong>muchísimo cariño</strong>.
+                    </p>
+                    <div class="signatures">
+                        <div>
+                            ❤️<br>
+                            <strong>Sergio</strong>
+                        </div>
+                        <div>
+                            ❤️<br>
+                            <strong>Celia</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="final-message">
+                    🏀 ¡NOS VAMOS AL BALONCESTO! 🏀
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
